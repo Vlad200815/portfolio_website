@@ -31,8 +31,7 @@ class _HomeScreenState extends State<HomeScreen>
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        alignment: Alignment.center,
-        width: 800,
+        width: 700,
         height: 400,
         child: Column(
           children: [

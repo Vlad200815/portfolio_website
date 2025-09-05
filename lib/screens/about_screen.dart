@@ -13,7 +13,7 @@ class _AboutScreenState extends State<AboutScreen> {
     return Column(
       children: [
         Center(
-          child: Container(
+          child: SizedBox(
             width: 800,
             height: 400,
             child: Row(

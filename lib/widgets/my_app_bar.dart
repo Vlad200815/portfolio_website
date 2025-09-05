@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
-  const MyAppBar({super.key});
+  void Function()? onTapToHome;
+  void Function()? onTapToAbout;
+  void Function()? onTapToFirstProjects;
+
+  MyAppBar({
+    super.key,
+    required this.onTapToAbout,
+    required this.onTapToFirstProjects,
+    required this.onTapToHome,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,30 +29,39 @@ class MyAppBar extends StatelessWidget {
           ),
           Row(
             children: [
-              Text(
-                "Home",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w900,
+              GestureDetector(
+                onTap: onTapToHome,
+                child: Text(
+                  "Home",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w900,
+                  ),
                 ),
               ),
               const SizedBox(width: 15),
-              Text(
-                "About",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w900,
+              GestureDetector(
+                onTap: onTapToAbout,
+                child: Text(
+                  "About",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w900,
+                  ),
                 ),
               ),
               const SizedBox(width: 15),
-              Text(
-                "Projects",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w900,
+              GestureDetector(
+                onTap: onTapToFirstProjects,
+                child: Text(
+                  "Projects",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w900,
+                  ),
                 ),
               ),
               const SizedBox(width: 15),

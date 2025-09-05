@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class ProjectsScreen extends StatelessWidget {
-  const ProjectsScreen({super.key});
+class FirstProjectsScreen extends StatelessWidget {
+  const FirstProjectsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Container(
+      child: SizedBox(
         width: 800,
         height: 1600,
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.start,
-          // crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               "PORTFOLIO",
@@ -31,7 +30,7 @@ class ProjectsScreen extends StatelessWidget {
                 fontSize: 20,
               ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 20),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
@@ -58,8 +57,9 @@ class ProjectsScreen extends StatelessWidget {
                     scale: 5,
                   ),
                 ),
-                const SizedBox(width: 40),
+                const SizedBox(width: 30),
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
                       "Lybianka💸",
@@ -80,7 +80,8 @@ class ProjectsScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
                     Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
+                      // crossAxisAlignment: CrossAxisAlignment.end,
+                      // mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Text(
                           "Flutter",
@@ -150,12 +151,11 @@ class ProjectsScreen extends StatelessWidget {
               ],
             ),
             //new project
-            const SizedBox(height: 70),
+            const SizedBox(height: 45),
             Row(
               children: [
                 Column(
-                  // mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       "ScoreCounter⚽",

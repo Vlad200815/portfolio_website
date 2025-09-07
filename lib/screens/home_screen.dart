@@ -29,35 +29,27 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return Center(
-      child: Container(
-        width: 700,
-        height: 400,
+      child: SizedBox(
+        width: 800,
+        height: size.height,
         child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Row(
-              // mainAxisAlignment: MainAxisAlignment.start,
-              // crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Stack(
-                      children: [
-                        Text(
-                          "Cross-Platform👇",
-                          style: TextStyle(
-                            fontSize: 40,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.black,
-                          ),
-                        ),
-                        Positioned(
-                          left: 1,
-                          top: 0,
-                          child: Text(
+            Center(
+              child: Row(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Stack(
+                        children: [
+                          Text(
                             "Cross-Platform👇",
                             style: TextStyle(
                               fontSize: 40,
@@ -65,23 +57,23 @@ class _HomeScreenState extends State<HomeScreen>
                               color: Colors.black,
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    Stack(
-                      children: [
-                        Text(
-                          "Flutter Developer👋",
-                          style: TextStyle(
-                            fontSize: 40,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.black,
+                          Positioned(
+                            left: 1,
+                            top: 0,
+                            child: Text(
+                              "Cross-Platform👇",
+                              style: TextStyle(
+                                fontSize: 40,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.black,
+                              ),
+                            ),
                           ),
-                        ),
-                        Positioned(
-                          left: 1,
-                          top: 0,
-                          child: Text(
+                        ],
+                      ),
+                      Stack(
+                        children: [
+                          Text(
                             "Flutter Developer👋",
                             style: TextStyle(
                               fontSize: 40,
@@ -89,54 +81,66 @@ class _HomeScreenState extends State<HomeScreen>
                               color: Colors.black,
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 5),
-                    Text(
-                      "Hi, I'm Vlad Semeniuk. A possionate Fulutter",
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.grey,
+                          Positioned(
+                            left: 1,
+                            top: 0,
+                            child: Text(
+                              "Flutter Developer👋",
+                              style: TextStyle(
+                                fontSize: 40,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                    Text(
-                      "Developer based in Lyubeshiv, Ukraine📍",
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.grey,
+                      const SizedBox(height: 5),
+                      Text(
+                        "Hi, I'm Vlad Semeniuk. A possionate Fulutter",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.grey,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 15),
-                    Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {},
-                          child: Icon(FontAwesomeIcons.github),
+                      Text(
+                        "Developer based in Lutsk, Ukraine📍",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.grey,
                         ),
-                        const SizedBox(width: 5),
-                        GestureDetector(
-                          onTap: () {},
-                          child: Icon(FontAwesomeIcons.linkedin),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                const SizedBox(width: 40),
-
-                RotationTransition(
-                  turns: _controller,
-                  child: CircleAvatar(
-                    radius: 120,
-                    backgroundImage: AssetImage("assets/my_photo.jpg"),
+                      ),
+                      const SizedBox(height: 15),
+                      Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () {},
+                            child: Icon(FontAwesomeIcons.github),
+                          ),
+                          const SizedBox(width: 5),
+                          GestureDetector(
+                            onTap: () {},
+                            child: Icon(FontAwesomeIcons.linkedin),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                ),
-              ],
+                  const SizedBox(width: 40),
+
+                  RotationTransition(
+                    turns: _controller,
+                    child: CircleAvatar(
+                      radius: 120,
+                      backgroundImage: AssetImage("assets/my_photo.jpg"),
+                    ),
+                  ),
+                ],
+              ),
             ),
-            const SizedBox(height: 35),
+            const SizedBox(height: 100),
             Row(
               children: [
                 Stack(

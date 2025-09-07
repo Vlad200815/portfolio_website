@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
-  void Function()? onTapToHome;
-  void Function()? onTapToAbout;
-  void Function()? onTapToFirstProjects;
+  final void Function()? onTapToHome;
+  final void Function()? onTapToAbout;
+  final void Function()? onTapToFirstProjects;
+  final void Function()? onTapToContact;
 
-  MyAppBar({
+  const MyAppBar({
     super.key,
-    required this.onTapToAbout,
-    required this.onTapToFirstProjects,
-    required this.onTapToHome,
+    this.onTapToAbout,
+    this.onTapToFirstProjects,
+    this.onTapToHome,
+    this.onTapToContact,
   });
 
   @override
@@ -65,12 +67,15 @@ class MyAppBar extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 15),
-              Text(
-                "Contact",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w900,
+              GestureDetector(
+                onTap: onTapToContact,
+                child: Text(
+                  "Contact",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w900,
+                  ),
                 ),
               ),
               const SizedBox(width: 60),

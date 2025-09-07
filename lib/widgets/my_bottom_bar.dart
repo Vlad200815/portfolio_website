@@ -8,7 +8,7 @@ class MyBottomBar extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 200,
-      color: Colors.grey[50],
+      color: Colors.grey[100],
       child: Column(
         // mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,

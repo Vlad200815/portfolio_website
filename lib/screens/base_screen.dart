@@ -16,16 +16,20 @@ class BaseScreen extends StatelessWidget {
     final homeKey = GlobalKey();
     final aboutKey = GlobalKey();
     final firstProjectsKey = GlobalKey();
+    final contactKey = GlobalKey();
 
-    void scrollToSction(GlobalKey key) {
-      final context = key.currentContext;
-      if (context != null) {
-        Scrollable.ensureVisible(
-          context,
-          duration: const Duration(milliseconds: 600),
-          curve: Curves.easeInOut,
-        );
-      }
+    void scrollToSection(GlobalKey key) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        final context = key.currentContext;
+        if (context != null) {
+          Scrollable.ensureVisible(
+            key.currentContext!,
+            duration: Duration(milliseconds: 500),
+            curve: Curves.easeInOut,
+            alignment: 0.0, // make sure it scrolls to the top
+          );
+        }
+      });
     }
 
     return Scaffold(
@@ -40,9 +44,10 @@ class BaseScreen extends StatelessWidget {
             titleSpacing: 0,
             expandedHeight: 80, // adjust height if needed
             title: MyAppBar(
-              onTapToHome: () => scrollToSction(homeKey),
-              onTapToAbout: () => scrollToSction(aboutKey),
-              onTapToFirstProjects: () => scrollToSction(firstProjectsKey),
+              onTapToHome: () => scrollToSection(homeKey),
+              onTapToAbout: () => scrollToSection(aboutKey),
+              onTapToFirstProjects: () => scrollToSection(firstProjectsKey),
+              onTapToContact: () => scrollToSection(contactKey),
             ), // <- use your custom app bar widget
           ),
           // SliverFillViewport(
@@ -54,7 +59,7 @@ class BaseScreen extends StatelessWidget {
           //     FirstProjectsScreen(),
           //   ]),
           // ),
-          SliverList(
+          SliverFillViewport(
             delegate: SliverChildListDelegate([
               Container(key: homeKey, child: const HomeScreen()),
               Container(key: aboutKey, child: const AboutScreen()),
@@ -62,7 +67,8 @@ class BaseScreen extends StatelessWidget {
                 key: firstProjectsKey,
                 child: const FirstProjectsScreen(),
               ),
-              const MyBottomBar(),
+              // const SizedBox(height: 150),
+              MyBottomBar(key: contactKey),
             ]),
           ),
           // SliverToBoxAdapter(child: MyBottomBar()),

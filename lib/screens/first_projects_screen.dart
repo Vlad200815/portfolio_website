@@ -6,10 +6,11 @@ class FirstProjectsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Center(
       child: SizedBox(
         width: 800,
-        height: 1600,
+        height: size.height,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

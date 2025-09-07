@@ -10,13 +10,15 @@ class AboutScreen extends StatefulWidget {
 class _AboutScreenState extends State<AboutScreen> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Center(
-          child: SizedBox(
-            width: 800,
-            height: 400,
-            child: Row(
+    final size = MediaQuery.of(context).size;
+    return Center(
+      child: SizedBox(
+        width: 800,
+        height: size.height,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Stack(
@@ -68,7 +70,7 @@ class _AboutScreenState extends State<AboutScreen> {
                         ),
                       ),
                       Text(
-                        "based in Lyubishiv, Ukraine📍",
+                        "based in Lutsk, Ukraine📍",
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.w900,
@@ -92,9 +94,9 @@ class _AboutScreenState extends State<AboutScreen> {
                 ),
               ],
             ),
-          ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }

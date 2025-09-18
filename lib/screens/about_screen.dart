@@ -81,7 +81,7 @@ class _AboutScreenState extends State<AboutScreen> {
                       FittedBox(
                         fit: BoxFit.scaleDown,
                         child: Text(
-                          "As a Junior Flutter Developer. I possess an impressive\n arsenal of skills in Flutter, Dart, Bloc, Hive, Firebase, Git \nand a little bit of Python with FastAPI. \nI excel in designing and maintaining responsive mobile apps \nand websites that offer a smooth use experience. \nMy expertise lies in crafting dynamic, engaging interfaces \nthrough writing clean and optimized code and utilizing\n cutting-edge development tools and techniques. I am also a team \nplayer who thrives in collaborating with cross-functional teams \nto produce outstanding applications.",
+                          "As a Junior Flutter Developer. I possess an impressive\narsenal of skills in Flutter, Dart, Bloc, Hive, Firebase, Git \nand a little bit of Python with FastAPI. \nI excel in designing and maintaining responsive mobile apps \nand websites that offer a smooth use experience. \nMy expertise lies in crafting dynamic, engaging interfaces \nthrough writing clean and optimized code and utilizing\ncutting-edge development tools and techniques. I am also a team \nplayer who thrives in collaborating with cross-functional teams \nto produce outstanding applications.",
                           style: TextStyle(
                             color: Colors.grey,
                             fontWeight: FontWeight.w400,

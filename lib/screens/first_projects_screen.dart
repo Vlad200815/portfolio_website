@@ -31,7 +31,7 @@ class FirstProjectsScreen extends StatelessWidget {
                 fontSize: 20,
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
@@ -58,7 +58,7 @@ class FirstProjectsScreen extends StatelessWidget {
                     scale: 5,
                   ),
                 ),
-                const SizedBox(width: 30),
+                const SizedBox(width: 20),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -152,7 +152,7 @@ class FirstProjectsScreen extends StatelessWidget {
               ],
             ),
             //new project
-            const SizedBox(height: 45),
+            const SizedBox(height: 20),
             Row(
               children: [
                 Column(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class FirstProjectsScreen extends StatelessWidget {
-  const FirstProjectsScreen({super.key});
+class FirstProjectsScreenDesktop extends StatelessWidget {
+  const FirstProjectsScreenDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {

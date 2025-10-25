@@ -16,6 +16,7 @@ class MyAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Container(
       width: double.infinity,
       height: 70,
@@ -25,11 +26,13 @@ class MyAppBar extends StatelessWidget {
         children: [
           Row(
             children: [
-              const SizedBox(width: 10),
-              Image.asset("assets/my_logo.png", fit: BoxFit.cover),
+              const SizedBox(width: 20),
+              Image.asset("assets/my_logo.png"),
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               GestureDetector(
                 onTap: onTapToHome,
@@ -42,7 +45,7 @@ class MyAppBar extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(width: 15),
+              SizedBox(width: size.width / 80),
               GestureDetector(
                 onTap: onTapToAbout,
                 child: Text(
@@ -54,7 +57,8 @@ class MyAppBar extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(width: 15),
+              SizedBox(width: size.width / 80),
+
               GestureDetector(
                 onTap: onTapToFirstProjects,
                 child: Text(
@@ -66,7 +70,8 @@ class MyAppBar extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(width: 15),
+              SizedBox(width: size.width / 80),
+
               GestureDetector(
                 onTap: onTapToContact,
                 child: Text(
@@ -78,7 +83,7 @@ class MyAppBar extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(width: 60),
+              SizedBox(width: size.width / 40),
             ],
           ),
         ],

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AboutScreen extends StatefulWidget {
-  const AboutScreen({super.key});
+class AboutScreenDesktop extends StatefulWidget {
+  const AboutScreenDesktop({super.key});
 
   @override
-  State<AboutScreen> createState() => _AboutScreenState();
+  State<AboutScreenDesktop> createState() => _AboutScreenState();
 }
 
-class _AboutScreenState extends State<AboutScreen> {
+class _AboutScreenState extends State<AboutScreenDesktop> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;

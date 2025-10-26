@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio_website/functions/functions.dart';
 
 class SecondProjectScreenMobile extends StatelessWidget {
   const SecondProjectScreenMobile({super.key});
@@ -35,26 +36,29 @@ class SecondProjectScreenMobile extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ClipRRect(
-              borderRadius: BorderRadiusGeometry.circular(size.width / 35),
-              child: Image.asset(
-                "assets/projects/score_counter_first.jpg",
-                scale: 5,
+              borderRadius: BorderRadiusGeometry.circular(size.width / 20),
+              child: SizedBox(
+                height: size.height / 3.3,
+                width: size.width / 3.3,
+                child: Image.asset("assets/projects/score_counter_first.jpg"),
               ),
             ),
             SizedBox(width: size.width / 50),
             ClipRRect(
-              borderRadius: BorderRadiusGeometry.circular(size.width / 35),
-              child: Image.asset(
-                "assets/projects/score_counter_second.jpg",
-                scale: 5,
+              borderRadius: BorderRadiusGeometry.circular(size.width / 20),
+              child: SizedBox(
+                height: size.height / 3.3,
+                width: size.width / 3.3,
+                child: Image.asset("assets/projects/score_counter_second.jpg"),
               ),
             ),
             SizedBox(width: size.width / 50),
             ClipRRect(
-              borderRadius: BorderRadiusGeometry.circular(size.width / 35),
-              child: Image.asset(
-                "assets/projects/score_counter_third.jpg",
-                scale: 5,
+              borderRadius: BorderRadiusGeometry.circular(size.width / 20),
+              child: SizedBox(
+                height: size.height / 3.3,
+                width: size.width / 3.3,
+                child: Image.asset("assets/projects/score_counter_third.jpg"),
               ),
             ),
           ],
@@ -104,27 +108,52 @@ class SecondProjectScreenMobile extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "Code",
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w500,
-                fontSize: size.width / 25,
+            GestureDetector(
+              onTap: () async {
+                final gitHubScoreCounter = Uri.parse(
+                  "https://github.com/Vlad200815/ScoreCounter",
+                );
+                await launchUrlFun(gitHubScoreCounter);
+              },
+              child: Row(
+                children: [
+                  Text(
+                    "Code",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                      fontSize: size.width / 25,
+                    ),
+                  ),
+                  SizedBox(width: size.width / 60),
+                  Icon(FontAwesomeIcons.github),
+                ],
               ),
             ),
-            SizedBox(width: size.width / 60),
-            Icon(FontAwesomeIcons.github),
+
             SizedBox(width: size.width / 25),
-            Text(
-              "Get App",
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w500,
-                fontSize: size.width / 25,
+            GestureDetector(
+              onTap: () async {
+                final Uri getScoreCounter = Uri.parse(
+                  "https://t.me/+QdvZd_y-Okc1Mjky",
+                );
+                await launchUrlFun(getScoreCounter);
+              },
+              child: Row(
+                children: [
+                  Text(
+                    "Get App",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                      fontSize: size.width / 25,
+                    ),
+                  ),
+                  SizedBox(width: size.width / 60),
+                  Icon(Icons.download_rounded),
+                ],
               ),
             ),
-            SizedBox(width: size.width / 60),
-            Icon(Icons.download_rounded),
           ],
         ),
       ],

@@ -57,31 +57,37 @@ class _AboutScreenState extends State<AboutScreenMobile> {
             ),
           ),
         ),
-        SizedBox(height: size.height / 20),
-        Stack(
-          clipBehavior: Clip.none,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadiusGeometry.circular(12),
-              child: Image.asset("assets/about.jpg", scale: 3),
-            ),
+        SizedBox(height: size.height / 40),
+        FittedBox(
+          child: SizedBox(
+            height: size.height / 3,
+            width: size.width / 2,
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadiusGeometry.circular(12),
+                  child: Image.asset("assets/about.jpg", scale: 3),
+                ),
 
-            Positioned(
-              bottom: -30,
-              right: -30,
-              child: Container(
-                width: 140,
-                height: 140,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(50),
+                Positioned(
+                  bottom: -30,
+                  right: -30,
+                  child: Container(
+                    width: size.width / 2.5,
+                    height: size.height / 5.5,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                    child: Center(
+                      child: Image.asset("assets/developer.png", scale: 5),
+                    ),
+                  ),
                 ),
-                child: Center(
-                  child: Image.asset("assets/developer.png", scale: 5),
-                ),
-              ),
+              ],
             ),
-          ],
+          ),
         ),
       ],
     );

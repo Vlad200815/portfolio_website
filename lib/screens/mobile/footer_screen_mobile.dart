@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio_website/functions/functions.dart';
 
 class FooterScreenMobile extends StatelessWidget {
   const FooterScreenMobile({super.key});
@@ -34,20 +35,26 @@ class FooterScreenMobile extends StatelessWidget {
             SizedBox(height: size.height / 50),
 
             /// --- Contact Button ---
-            Container(
-              height: size.height / 14,
-              width: size.width / 2.5,
-              decoration: BoxDecoration(
-                color: Colors.blue,
-                borderRadius: BorderRadius.circular(size.width / 17),
-              ),
-              child: Center(
-                child: Text(
-                  "CONTACT ME",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: size.width / 25,
-                    fontWeight: FontWeight.w900,
+            GestureDetector(
+              onTap: () async {
+                final Uri myTg = Uri.parse("https://t.me/@Vlad_Semeniuk_18");
+                await launchUrlFun(myTg);
+              },
+              child: Container(
+                height: size.height / 14,
+                width: size.width / 2.5,
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(size.width / 17),
+                ),
+                child: Center(
+                  child: Text(
+                    "CONTACT ME",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: size.width / 25,
+                      fontWeight: FontWeight.w900,
+                    ),
                   ),
                 ),
               ),

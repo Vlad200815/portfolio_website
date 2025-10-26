@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio_website/functions/functions.dart';
 
 class FooterScreenDesktop extends StatelessWidget {
   const FooterScreenDesktop({super.key});
@@ -25,20 +26,26 @@ class FooterScreenDesktop extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          Container(
-            height: 80,
-            width: 200,
-            decoration: BoxDecoration(
-              color: Colors.blue,
-              borderRadius: BorderRadius.circular(30),
-            ),
-            child: Center(
-              child: Text(
-                "CONTACT ME",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w900,
+          GestureDetector(
+            onTap: () async {
+              final Uri myTg = Uri.parse("https://t.me/@Vlad_Semeniuk_18");
+              await launchUrlFun(myTg);
+            },
+            child: Container(
+              height: 80,
+              width: 200,
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.circular(30),
+              ),
+              child: Center(
+                child: Text(
+                  "CONTACT ME",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w900,
+                  ),
                 ),
               ),
             ),
@@ -57,6 +64,34 @@ class FooterScreenDesktop extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
+              Row(
+                children: [
+                  Icon(Icons.map_rounded, color: Colors.blue),
+                  const SizedBox(width: 20),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Location",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w800,
+                          fontSize: 16,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        "Lyubeshiv, Ukraine",
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
               Row(
                 children: [
                   Icon(Icons.map_rounded, color: Colors.blue),

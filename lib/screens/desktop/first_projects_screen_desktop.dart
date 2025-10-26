@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio_website/functions/functions.dart';
 
 class FirstProjectsScreenDesktop extends StatelessWidget {
   const FirstProjectsScreenDesktop({super.key});
@@ -124,27 +125,52 @@ class FirstProjectsScreenDesktop extends StatelessWidget {
                     const SizedBox(height: 15),
                     Row(
                       children: [
-                        Text(
-                          "Code",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 16,
+                        GestureDetector(
+                          onTap: () async {
+                            final Uri lybiankaGitHubUrl = Uri.parse(
+                              "https://github.com/Vlad200815/Lybianka",
+                            );
+                            await launchUrlFun(lybiankaGitHubUrl);
+                          },
+                          child: Row(
+                            children: [
+                              Text(
+                                "Code",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 16,
+                                ),
+                              ),
+                              const SizedBox(width: 5),
+                              Icon(FontAwesomeIcons.github),
+                            ],
                           ),
                         ),
-                        const SizedBox(width: 5),
-                        Icon(FontAwesomeIcons.github),
+
                         const SizedBox(width: 20),
-                        Text(
-                          "Get App",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 16,
+                        GestureDetector(
+                          onTap: () async {
+                            final Uri getLybianka = Uri.parse(
+                              "https://t.me/+kPF1QBuxAKFjZDNi",
+                            );
+                            await launchUrlFun(getLybianka);
+                          },
+                          child: Row(
+                            children: [
+                              Text(
+                                "Get App",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 16,
+                                ),
+                              ),
+                              const SizedBox(width: 5),
+                              Icon(Icons.download_rounded),
+                            ],
                           ),
                         ),
-                        const SizedBox(width: 5),
-                        Icon(Icons.download_rounded),
                       ],
                     ),
                   ],
@@ -218,27 +244,52 @@ class FirstProjectsScreenDesktop extends StatelessWidget {
                     const SizedBox(height: 15),
                     Row(
                       children: [
-                        Text(
-                          "Code",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 16,
+                        GestureDetector(
+                          onTap: () async {
+                            final gitHubScoreCounter = Uri.parse(
+                              "https://github.com/Vlad200815/ScoreCounter",
+                            );
+                            await launchUrlFun(gitHubScoreCounter);
+                          },
+                          child: Row(
+                            children: [
+                              Text(
+                                "Code",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 16,
+                                ),
+                              ),
+                              const SizedBox(width: 5),
+                              Icon(FontAwesomeIcons.github),
+                            ],
                           ),
                         ),
-                        const SizedBox(width: 5),
-                        Icon(FontAwesomeIcons.github),
+
                         const SizedBox(width: 20),
-                        Text(
-                          "Get App",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 16,
+                        GestureDetector(
+                          onTap: () async {
+                            final Uri getScoreCounter = Uri.parse(
+                              "https://t.me/+QdvZd_y-Okc1Mjky",
+                            );
+                            await launchUrlFun(getScoreCounter);
+                          },
+                          child: Row(
+                            children: [
+                              Text(
+                                "Get App",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 16,
+                                ),
+                              ),
+                              const SizedBox(width: 5),
+                              Icon(Icons.download_rounded),
+                            ],
                           ),
                         ),
-                        const SizedBox(width: 5),
-                        Icon(Icons.download_rounded),
                       ],
                     ),
                   ],

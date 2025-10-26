@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio_website/functions/functions.dart';
 
 class HomeScreenDesktop extends StatefulWidget {
   const HomeScreenDesktop({super.key});
@@ -26,6 +27,11 @@ class _HomeScreenState extends State<HomeScreenDesktop>
     _controller.dispose();
     super.dispose();
   }
+
+  final Uri _gitHubUrl = Uri.parse('https://github.com/Vlad200815');
+  final Uri _linkednInUrl = Uri.parse(
+    "https://www.linkedin.com/in/vlad-semeniuk-a112a6265/",
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -116,13 +122,24 @@ class _HomeScreenState extends State<HomeScreenDesktop>
                       Row(
                         children: [
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () async {
+                              await launchUrlFun(_gitHubUrl);
+                            },
                             child: Icon(FontAwesomeIcons.github),
                           ),
                           const SizedBox(width: 5),
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () async {
+                              await launchUrlFun(_linkednInUrl);
+                            },
                             child: Icon(FontAwesomeIcons.linkedin),
+                          ),
+                          const SizedBox(width: 5),
+                          GestureDetector(
+                            onTap: () {
+                              downloadResume("assets/Resume.pdf");
+                            },
+                            child: Icon(FontAwesomeIcons.fileArrowDown),
                           ),
                         ],
                       ),

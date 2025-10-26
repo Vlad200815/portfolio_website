@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import "package:portfolio_website/functions/functions.dart";
 
 class HomeScreenMobile extends StatefulWidget {
   const HomeScreenMobile({super.key});
@@ -26,6 +27,11 @@ class _HomeScreenState extends State<HomeScreenMobile>
     _controller.dispose();
     super.dispose();
   }
+
+  final Uri _gitHubUrl = Uri.parse('https://github.com/Vlad200815');
+  final Uri _linkednInUrl = Uri.parse(
+    "https://www.linkedin.com/in/vlad-semeniuk-a112a6265/",
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -109,13 +115,36 @@ class _HomeScreenState extends State<HomeScreenMobile>
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 GestureDetector(
-                  onTap: () {},
-                  child: Icon(FontAwesomeIcons.github),
+                  onTap: () async {
+                    await launchUrlFun(_gitHubUrl);
+                  },
+                  child: SizedBox(
+                    height: 25,
+                    width: 50,
+                    child: Icon(FontAwesomeIcons.github),
+                  ),
                 ),
-                SizedBox(height: size.height / 100),
+                SizedBox(width: size.width / 20),
                 GestureDetector(
-                  onTap: () {},
-                  child: Icon(FontAwesomeIcons.linkedin),
+                  onTap: () async {
+                    await launchUrlFun(_linkednInUrl);
+                  },
+                  child: SizedBox(
+                    height: 25,
+                    width: 50,
+                    child: Icon(FontAwesomeIcons.linkedin),
+                  ),
+                ),
+                SizedBox(width: size.width / 20),
+                GestureDetector(
+                  onTap: () {
+                    downloadResume("assets/Resume.pdf");
+                  },
+                  child: SizedBox(
+                    height: 25,
+                    width: 50,
+                    child: Icon(FontAwesomeIcons.fileArrowDown),
+                  ),
                 ),
               ],
             ),
